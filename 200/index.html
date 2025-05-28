@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kossi essai</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <img src="logo.jpeg" alt="">
+            <button id="returnButton" style=" margin-top: 10px; margin-left: 100px;
+            border-radius: 8px; height: 40px; background-color: rgb(16, 193, 247);">Retour</button>
+            <ul id="tableau">
+                <li class="project" lien="projets 2/chronometre.html"><a href="#" ><i class='bx bxs-time' ></i><h6>Chronomètre</h6></a></li>
+                <li class="project" lien="projets 2/todolist.html" ><a href="#" ><i class='bx bx-list-ol' ></i><h6>To do list</h6></a></li>
+                <li class="project" lien="projets 2/saut.html"><a href="#" ><i class='bx bx-child' ></i><h6>Jeu de saut</h6></a></li>
+                <li class="project" lien="projets 2/pps.html"><a href="#" ><i class='bx bx-package' ></i><h6>Pierre papier ciseaux</h6></a></li>
+                <li class="project" lien="projets 2/pass.html"><a href="#" ><i class='bx bxs-key'></i><h6>Vérification mot de passe</h6></a></li>
+                <li class="project" lien="projets 2/cal.html"><a href="#" ><i class='bx bxs-calculator' ></i><h6>Jeu de calcul</h6></a></li>
+                <li class="project" lien="projets 2/code.html"><a href="#" ><i class='bx bx-barcode' ></i><h6>Générateur code barre</h6></a></li>
+                <li class="project" lien="projets 2/GP.html"><a href="#" ><i class='bx bxs-key'></i><h6>Générateur mot de passe</h6></a></li>
+                <li class="project" lien=" projets 2/racourci.html"><a href="#" ><i class='bx bx-link' ></i><h6>Raccourcisseur de lien</h6></a></li>
+                <li class="project" lien="projets 2/onglet.html"><a href="#" ><i class='bx bx-git-compare'></i><h6>Créer des onglets</h6></a></li>
+                <li class="project" lien="projets 2/calco.html"><a href="#"><i class='bx bxs-calculator' ></i><h6>Calculatrice</h6></a></li>
+            </ul>
+            
+            <p>VEILLEZ
+            CHOISIR
+        LÀ HAUT</p>
+   
+        </div>
+       
+        <div class="box2">
+           <div class="tete">
+                <div class="tete1">
+                <h2>Projet final | </h2>
+                <SPan><h1>DOCK</h1></SPan>
+                </div>
+                <div class="tete2">
+                    <p>KOS À NWALL JEAN BERTIN</p>
+                    
+                    <img src="Screenshot from 2024-09-16 09-28-30.png" alt="">
+                </div>
+           </div>
+           <div class="milieu">
+              <div class="milieu1">
+                  
+                
+                        
+                <p class="miniscule">KOS À NWALL JEAN BERTIN</p><br><br>
+                <div class="grand">
+                    <img src="Screenshot from 2024-09-16 09-28-30.png" alt="">
+                </div>
+                <div class="retour">
+                    
+                </div>
+                
+              </div>
+              <div class="milieu2">
+                <form>
+                        
+                    <input type="text" value="Nom Prenom: KOS À NWALL JEAN BERTIN">
+                    
+                    <input type="email" value="Email : kosjean0@gmail.com">
+                    
+                    <input type="tel" value="Téléphone : +237 656558990">
+                    
+                    <input type="text" value="Adresse : Yaoundé/centre/émana">
+                    
+                </form> 
+              </div>
+              <iframe id="projectFrame"></iframe>
+           </div>
+           <div class="fesse">
+            <p>© 2025 KFOKAM45 </p>
+            <div class="fesse1">
+                <p>KOS À NWALL JEAN BERTIN</p>
+            <img src="Screenshot from 2024-09-16 09-28-30.png" alt="">
+           </div>
+            
+           </div>
+       
+        </div>
+    </div>
+    <script>
+document.getElementById('returnButton').addEventListener('click', function() {
+  // Exemple : revenir à la page d'accueil
+  window.location.href = 'index.html';
+});
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+             const links = document.querySelectorAll('#tableau a');
+             const projectFrame = document.getElementById('projectFrame');
+             const returnButton = document.getElementById('returnButton');
+             const initialText = document.getElementById('initialText');
+             document.getElementById('anotherButton').addEventListener('click', function() {
+     window.location.href = 'index.html'; // Remplacez 'votre_page.html' par l'URL de votre page
+ });
+ 
+             links.forEach(link => {
+                 link.addEventListener('click', function(event) {
+                     event.preventDefault();
+                     const src = this.getAttribute('data-src');
+                     projectFrame.src = src;
+                     projectFrame.style.display = 'block'; // Affiche l'iframe
+                     initialText.style.display = 'none'; // Cache le texte initial
+                     returnButton.style.display = 'block'; // Affiche le bouton
+                 });
+             });
+ 
+             returnButton.addEventListener('click', function() {
+                 projectFrame.src = ''; // Réinitialise l'iframe
+                 projectFrame.style.display = 'none'; // Cache l'iframe
+                 initialText.style.display = 'block'; // Affiche le texte initial
+                 returnButton.style.display = 'none'; // Cache le bouton
+             });
+         });
+
+         projects = document.querySelectorAll('.project');
+         const milieu1 = document.querySelector('.milieu1');
+         const milieu2 = document.querySelector('.milieu2');
+
+         projects.forEach(project => {
+            project.addEventListener('click', function(){
+              let lien = this.getAttribute('lien');
+              let iframe = document.getElementById('projectFrame');
+              iframe.src = lien;
+              iframe.style.display= "block";
+            milieu1.style.opacity = "0";
+            milieu2.style.opacity = "0";
+            })
+         });
+     </script>
+</body>
+</html>

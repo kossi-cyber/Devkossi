@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onglets Interactifs</title>
+    <link rel="stylesheet" href="onglet.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="tab-container">
+        <div class="tab">
+            <button class="tablinks active" onclick="openOnglet(event, 'Home')"><i class="fas fa-home"></i> Accueil</button>
+            <button class="tablinks" onclick="openOnglet(event, 'Contact')"><i class="fas fa-envelope"></i> Contact</button>
+            <button class="tablinks" onclick="openOnglet(event, 'Reservation')"><i class="far fa-calendar-check"></i> Réservation</button>
+            <button class="tablinks" onclick="openOnglet(event, 'Boutique')"><i class="fas fa-shopping-cart"></i> Boutique</button>
+        </div>
+
+        <div id="Home" class="tabcontent">
+            <h3>Accueil</h3>
+            <p>Bienvenue sur la page d'accueil.</p>
+            <div class="picture">
+                <img src="avocat.jpeg" alt="Avocat">
+            </div>
+        </div>
+
+        <div id="Contact" class="tabcontent">
+            <h3>Contact</h3>
+            <p>N'hésitez pas à nous contacter pour toute question.</p>
+            <div class="picture">
+                <img src="okok.jpeg" alt="Contact">
+            </div>
+        </div>
+
+        <div id="Reservation" class="tabcontent">
+            <h3>Réservation</h3>
+            <p>Réservez votre service ou produit ici.</p>
+            <div class="picture">
+                <img src="mangue.jpeg" alt="Mangue">
+            </div>
+        </div>
+
+        <div id="Boutique" class="tabcontent">
+            <h3>Boutique</h3>
+            <p>Découvrez nos articles en vente.</p>
+            <div class="picture">
+                <img src="pomme.jpeg" alt="Pomme">
+            </div>
+        </div>
+    </div>
+
+    <script src="onglet.js"></script>
+    <script>
+        // Ouvrir l'onglet "Accueil" par défaut au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.tablinks.active').click();
+        });
+    </script>
+</body>
+</html>

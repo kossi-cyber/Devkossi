@@ -1,0 +1,79 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: white;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #5372f0;
+}
+
+.inputBox {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+h2 {
+ text-transform: capitalize;
+ font-size: 16px;
+ font-weight: 400;
+ text-align: center;
+ padding: 10px 0;
+ border-bottom: 1px solid #ccc;
+ margin-bottom: 1px;
+ letter-spacing: 1px;
+}
+
+.passwordBox{
+  padding: 0 10px;
+}
+
+input {
+  width: 100%;
+  letter-spacing: 3px;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 400;
+  outline: 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.buttons {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+button{
+  padding: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+button:first-child{
+  color: white;
+  background-color: #5372f0;
+  width: 69%;
+}
+
+button:last-child{
+  color: white;
+  background-color: transparent;
+  color: #6c757d;
+  width: 28%;
+  border: 1px solid #6c757d;
+}

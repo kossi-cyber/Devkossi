@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul Mental</title>
+    <link rel="stylesheet" href="cal.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="game-container">
+        <p class="message"></p>
+        <section class="quiz-section">
+            <div class="calculation">
+                <h1 class="number nb1"></h1>
+                <h1 class="operator op">+</h1>
+                <h1 class="number nb2"></h1>
+            </div>
+            <h2>Entrez votre réponse :</h2>
+            <input type="number" class="response-input res">
+            <button class="submit-button" onclick="verifier()">Vérifier</button>
+        </section>
+        <p class="score"></p>
+        <a href="cal.html" class="restart-link link">Recommencer</a>
+    </div>
+</body>
+<script src="cal.js"></script>
+</html>

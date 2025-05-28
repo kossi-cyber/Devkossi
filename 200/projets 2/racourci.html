@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racourcisseur de Liens</title>
+    <link rel="stylesheet" href="racourci.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Racourcisseur de Liens</h1>
+        <p>Collez un lien valide ci-dessous pour le raccourcir !</p>
+    </header>
+    <section class="shortener-section">
+        <main class="shortener-main">
+            <p class="error_message"></p>
+            <div class="input-group">
+                <input type="url" placeholder="Coller le lien à raccourcir" class="long_link">
+                <button onclick="shortLinkFunct()"><i class="fas fa-cut"></i> Raccourcir</button>
+            </div>
+            <div class="result-container">
+                <div class="loading" style="display: none;"><i class="fas fa-spinner fa-spin"></i> Raccourcissement en cours...</div>
+                <div class="result" style="display: none;">
+                    <a href="#" target="_blank" class="short-url"></a>
+                    <button class="copy-button" onclick="copyToClipboard('')"><i class="fas fa-copy"></i> Copier</button>
+                </div>
+            </div>
+        </main>
+    </section>
+    <script src="racourci.js"></script>
+</body>
+</html>

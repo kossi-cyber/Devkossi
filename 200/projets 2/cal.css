@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Police moderne et lisible */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Utiliser min-height pour s'adapter au contenu */
+    background-color: #f3f7fa; /* Fond clair et moderne */
+    flex-direction: column;
+    width: 100%;
+}
+
+.game-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    max-width: 400px; /* Limiter la largeur sur les grands écrans */
+    width: 90%; /* S'adapter aux écrans plus petits */
+}
+
+.message {
+    color: #fff;
+    padding: 10px 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.quiz-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.calculation {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calculation .number {
+    color: #333;
+    font-size: 60px;
+    margin: 0 25px;
+    font-weight: bold;
+}
+
+.calculation .operator {
+    color: #5cb85c; /* Couleur pour l'opérateur */
+    font-size: 60px;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.quiz-section h2 {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.response-input {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    color: #333;
+    font-size: 1em;
+    margin-bottom: 25px;
+    width: 80%;
+    max-width: 200px;
+    text-align: center;
+}
+
+.submit-button {
+    padding: 12px 40px;
+    background-color: #007bff; /* Couleur principale pour le bouton */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.score {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.score span {
+    color: #ffc107; /* Couleur d'accent pour le score */
+}
+
+.restart-link {
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #6c757d; /* Couleur secondaire pour le lien */
+    background-color: #6c757d;
+    padding: 10px 30px;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.restart-link:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+}

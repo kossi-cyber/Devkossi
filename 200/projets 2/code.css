@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.barcode-generator-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #333;
+}
+
+.barcode-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 6px 0 0 6px;
+    font-size: 1em;
+}
+
+button {
+    cursor: pointer;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+#barcode-box {
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+#barcode-box svg {
+    max-width: 100%;
+    height: auto;
+}
+
+#download-box {
+    margin-top: 20px;
+    display: none;
+    justify-content: center;
+}
+
+#download-box button {
+    width: 100%;
+    border-radius: 6px;
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#download-box button:hover {
+    background-color: #1e7e34;
+}
+
+#download-box button i {
+    margin-right: 8px;
+}
+
+.error {
+    text-align: center;
+    font-size: 0.9em;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 6px;
+    margin-top: 20px;
+}

@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #282a36; /* Couleur de fond sombre populaire */
+}
+
+.game-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    background-color: #f8f8f2; /* Couleur de fond claire pour la section de jeu */
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h1 {
+    color: #44475a; /* Couleur de texte sombre */
+    margin-bottom: 30px;
+}
+
+.choices {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.player-choice, .computer-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choices h3 {
+    text-transform: uppercase;
+    color: #6272a4; /* Couleur de texte secondaire */
+    margin-bottom: 10px;
+}
+
+.choice-display {
+    background-color: #eee;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.choice-display img {
+    width: 60px;
+    height: 60px;
+}
+
+.result-text {
+    font-size: 1.5em;
+    color: #8be9fd; /* Couleur d'accent pour le résultat */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.buttons_choix_jeu {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    padding: 12px 30px;
+    color: #f8f8f2; /* Couleur de texte claire */
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: #bd93f9; /* Couleur d'accent pour les boutons */
+    border: none;
+    transition: background-color 0.3s ease;
+    text-transform: capitalize;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #8be9fd; /* Couleur d'accent au survol */
+    color: #282a36;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ff79c6; /* Indication de focus */
+}
+
+button i {
+    margin-right: 8px;
+}

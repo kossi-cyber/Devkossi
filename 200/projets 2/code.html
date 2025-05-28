@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Code-Barres</title>
+    <link rel="stylesheet" href="code.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="barcode-generator-container">
+        <h1>Générateur de Code-Barres</h1>
+        <div class="barcode-section">
+            <div class="input-group">
+                <input type="text" id="text" placeholder="Entrez le texte (max 19 caractères)">
+                <button id="button_code_bar"><i class="fas fa-barcode"></i> Générer</button>
+            </div>
+            <div id="barcode-box">
+                </div>
+            <div id="download-box" style="display: none;">
+                <button onclick="genererPDF()"><i class="fas fa-download"></i> Télécharger en PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GslLZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNTqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var button_code_bar = document.getElementById('button_code_bar');
+        var textInput = document.getElementById('text');
+        var barcodeBox = document.getElementById('barcode-box');
+        var downloadBox = document.getElementById('download-box');
+
+        button_code_bar.onclick = function() {
+            var textValue = textInput.value.trim();
+            barcodeBox.innerHTML = ""; // Effacer le code-barres précédent
+            barcodeBox.style.border = 'none';
+
+            if (textValue.length > 0) {
+                if (textValue.length < 20) {
+                    // Créer un élément SVG pour le code-barres
+                    var svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                    svgElement.setAttribute('id', 'barcodeImage');
+                    barcodeBox.appendChild(svgElement);
+
+                    JsBarcode("#barcodeImage", textValue);
+                    barcodeBox.style.border = '1px solid #ddd';
+                    downloadBox.style.display = "flex";
+                } else {
+                    barcodeBox.innerHTML = "<p class='error'>Le texte est trop long (max. 19 caractères)</p>";
+                    downloadBox.style.display = "none";
+                }
+            } else {
+                barcodeBox.innerHTML = "<p class='error'>Veuillez entrer le texte du code-barres</p>";
+                downloadBox.style.display = "none";
+            }
+        };
+
+        function genererPDF() {
+            var barcodeElement = document.getElementById('barcodeImage');
+            if (barcodeElement) {
+                var opt = {
+                    margin: 1,
+                    filename: `${textInput.value}.pdf`,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'a6', orientation: 'p' }
+                };
+                html2pdf().from(barcodeBox).set(opt).save();
+            } else {
+                alert("Veuillez générer un code-barres avant de télécharger le PDF.");
+            }
+        }
+    </script>
+</body>
+</html>

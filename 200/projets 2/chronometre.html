@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronomètre Moderne</title>
+    <link rel="stylesheet" href="chronometre.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="chronometer-container">
+        <div class="timer">
+            <span id="hours">00</span><span class="unit">h</span>
+            <span id="minutes">00</span><span class="unit">min</span>
+            <span id="seconds">00</span><span class="unit">s</span>
+            <span id="milliseconds">00</span><span class="unit ms">ms</span>
+        </div>
+        <div class="controls">
+            <button id="Start" class="start-button"><i class="fas fa-play"></i> Démarrer</button>
+            <button id="Stop" class="stop-button" disabled><i class="fas fa-pause"></i> Pause</button>
+            <button id="Reset" class="reset-button"><i class="fas fa-undo"></i> Réinitialiser</button>
+        </div>
+    </div>
+
+    <script>
+        let h = 0, mn = 0, s = 0, ms = 0, t;
+        let hoursSpan = document.getElementById('hours');
+        let minutesSpan = document.getElementById('minutes');
+        let secondsSpan = document.getElementById('seconds');
+        let millisecondsSpan = document.getElementById('milliseconds');
+        let btn_start = document.getElementById('Start');
+        let btn_stop = document.getElementById('Stop');
+        let btn_reset = document.getElementById('Reset');
+
+        function chrono() {
+            ms++;
+            if (ms > 9) {
+                ms = 0;
+                s++;
+                if (s > 59) {
+                    s = 0;
+                    mn++;
+                    if (mn > 59) {
+                        mn = 0;
+                        h++;
+                        hoursSpan.textContent = (h < 10) ? '0' + h : h;
+                    }
+                    minutesSpan.textContent = (mn < 10) ? '0' + mn : mn;
+                }
+                secondsSpan.textContent = (s < 10) ? '0' + s : s;
+            }
+            millisecondsSpan.textContent = ms;
+        }
+
+        function start() {
+            t = setInterval(chrono, 100);
+            btn_start.disabled = true;
+            btn_stop.disabled = false;
+        }
+
+        function stop() {
+            clearInterval(t);
+            btn_start.disabled = false;
+            btn_stop.disabled = true;
+        }
+
+        function reset() {
+            clearInterval(t);
+            btn_start.disabled = false;
+            btn_stop.disabled = true;
+            h = 0;
+            mn = 0;
+            s = 0;
+            ms = 0;
+            hoursSpan.textContent = '00';
+            minutesSpan.textContent = '00';
+            secondsSpan.textContent = '00';
+            millisecondsSpan.textContent = '0';
+        }
+
+        btn_start.onclick = start;
+        btn_stop.onclick = stop;
+        btn_reset.onclick = reset;
+    </script>
+</body>
+</html>
